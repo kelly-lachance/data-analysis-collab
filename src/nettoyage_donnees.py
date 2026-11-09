@@ -15,4 +15,7 @@ df_ventes.shape
 df_ventes["produit"] = df_ventes["produit"].str.strip().str.title()
 
 df_ventes["date_vente"] = pd.to_datetime(df_ventes["date_vente"])
-df_ventes[df_ventes.duplicated()]
+print(df_ventes[df_ventes.duplicated()])
+df_ventes = df_ventes.drop_duplicates()
+
+print(df_ventes.shape)
